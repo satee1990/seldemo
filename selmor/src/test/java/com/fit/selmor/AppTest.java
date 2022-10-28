@@ -1,20 +1,23 @@
 package com.fit.selmor;
 
-import static org.junit.Assert.assertTrue;
+import org.testng.annotations.Test;
 
-import org.junit.Test;
-
-/**
- * Unit test for simple App.
- */
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+    private static final Logger logger = 
+    		LogManager.getLogger(AppTest.class);
+
     @Test
-    public void shouldAnswerWithTrue()
+    public void hello()
     {
-        assertTrue( true );
+    	System.out.println("ok");
+    	logger.info("Information");
+        logger.warn("Warning");
+        logger.error("Error");
+        logger.fatal("Fatal error");
+        logger.debug("Debug");
+
     }
 }

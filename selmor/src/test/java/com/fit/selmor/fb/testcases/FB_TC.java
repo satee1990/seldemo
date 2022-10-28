@@ -1,5 +1,7 @@
 package com.fit.selmor.fb.testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -12,7 +14,7 @@ public class FB_TC {
 	FB_POM fb_pom = new FB_POM();
 
 	@Test
-	public void fb_login() {
+	public void fb_login() throws IOException {
 		
 		FB_Utility.getDriver("chrome");
 		FB_Utility.load_website(FB_TestData.URL);

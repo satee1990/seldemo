@@ -6,6 +6,8 @@ public class FB_TestData {
 	public static final String EMAIL = "satee107@gmail.com";
 	public static final String PASSWORD = "password";
 	public static final String MSG = "Sucess";
+	public static final String SCREEN_PATH = "d://selenium/";
+
 	
 	
 	

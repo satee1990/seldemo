@@ -1,14 +1,23 @@
 package com.fit.selmor.fb.utilities;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.fit.selmor.fb.testdata.FB_TestData;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -75,6 +84,19 @@ public class FB_Utility {
 
 		}
 		return element;
+	}
+	
+	public static void getScreenshot() throws IOException {
+		Date d = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		String now = sd.format(d);
+        TakesScreenshot scrShot =((TakesScreenshot)driver);
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        File DestFile=new File(FB_TestData.SCREEN_PATH+"screenshot"+now+".png");
+        FileUtils.copyFile(SrcFile, DestFile);
+
+
+
 	}
 	
 }

@@ -12,6 +12,27 @@ public class ExcelUtility {
 	FileInputStream fin = null;
 	FileOutputStream fout = null;
 	
+	public Object[][] getLoginData() {
+		Object[][] data = new Object[3][2];
+		try {
+			fin = new FileInputStream(FILE_PATH);
+			workbook = new XSSFWorkbook(fin);
+			sheet = workbook.getSheet("Sheet2");
+			String email,pwd;
+			for(int i=1;i<=3;i++) {
+				email = sheet.getRow(i).getCell(1).getStringCellValue();
+				pwd = sheet.getRow(i).getCell(2).getStringCellValue();
+				data[i-1][0]=email;
+				data[i-1][1]=pwd;
+			}
+			workbook.close();
+			fin.close();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return data;
+	}
+	
 	public String getText(int r,int c) {
 		String str = null;
 		try {

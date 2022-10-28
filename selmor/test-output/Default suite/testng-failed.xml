@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fit.selmor.fb.testcases.FB_TC">
+      <class name="com.fit.selmor.Test1">
         <methods>
-          <include name="fb_login"/>
+          <include name="fb"/>
         </methods>
-      </class> <!-- com.fit.selmor.fb.testcases.FB_TC -->
+      </class> <!-- com.fit.selmor.Test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

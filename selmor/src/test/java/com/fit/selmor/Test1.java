@@ -20,41 +20,36 @@ public class Test1 {
 	
 	WebDriver driver = null;
 	
-	@BeforeTest
-	public void open_browser() {
+	
+	
+	@DataProvider (name = "logindata")
+    public Object[][] logindata(){
+//	 return new Object[][] {{"xyz@gmail.com","password1"}, 
+//		 {"abc@gmail.com","passwowrd2"}};
+		ExcelUtility utility = new ExcelUtility();
+		Object[][] data = utility.getLoginData();
+		return data;
+    }
+	
+	@Test(dataProvider = "logindata")
+	public void fb(String email,String pass) throws InterruptedException {
 		WebDriverManager.edgedriver().setup();
 		driver = new EdgeDriver();
 		driver.manage().window().maximize();
-	}
-	
-	@Test
-	public void fb() {
-	
 		driver.get("http://www.facebook.com");
 		System.out.println(driver.getTitle());
-	}
-	
-	@Test(priority=0)
-	public void redbus() {
-	
-		driver.get("http://www.redbus.in");
-		System.out.println(driver.getTitle());
-	}
-	@Test(priority=1)
-	public void gmail() {
-	
-		driver.get("http://www.gmail.com");
-		System.out.println(driver.getTitle());
-	}
-	
-	
-	
-	@AfterTest
-	public void close_browser() throws InterruptedException {
+		driver.findElement(By.name("email")).sendKeys(email);
+		driver.findElement(By.name("pass")).sendKeys(pass);
+		driver.findElement(By.name("login")).click();
 		Thread.sleep(5000);
 		driver.close();
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 	

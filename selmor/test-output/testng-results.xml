@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-18T11:29:07 IST" name="Default suite" finished-at="2022-10-18T11:29:23 IST" duration-ms="16523">
+  <suite started-at="2022-10-28T11:23:37 IST" name="Default suite" finished-at="2022-10-28T11:23:37 IST" duration-ms="238">
     <groups>
     </groups>
-    <test started-at="2022-10-18T11:29:07 IST" name="Default test" finished-at="2022-10-18T11:29:23 IST" duration-ms="16523">
-      <class name="com.fit.selmor.fb.testcases.FB_TC">
-        <test-method signature="fb_login()[pri:0, instance:com.fit.selmor.fb.testcases.FB_TC@3232a28a]" started-at="2022-10-18T11:29:07 IST" name="fb_login" finished-at="2022-10-18T11:29:23 IST" duration-ms="16368" status="PASS">
+    <test started-at="2022-10-28T11:23:37 IST" name="Default test" finished-at="2022-10-28T11:23:37 IST" duration-ms="238">
+      <class name="com.fit.selmor.AppTest">
+        <test-method signature="hello()[pri:0, instance:com.fit.selmor.AppTest@6b5966e1]" started-at="2022-10-28T11:23:37 IST" name="hello" finished-at="2022-10-28T11:23:37 IST" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fb_login -->
-      </class> <!-- com.fit.selmor.fb.testcases.FB_TC -->
+        </test-method> <!-- hello -->
+      </class> <!-- com.fit.selmor.AppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
